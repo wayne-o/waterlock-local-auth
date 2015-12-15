@@ -22,6 +22,6 @@
 	"sub":true,
 	"strict":true,
 	"laxbreak":true,
-  	"laxcomma":true,
-	"predef":["User", "Attempt", "sails", "Auth", "waterlock"]
+  "laxcomma":true,
+	"predef":["User", "Attempt", "sails", "Auth", "waterlock", "it", "describe"]
 }
