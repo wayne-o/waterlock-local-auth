@@ -1,3 +1,5 @@
+'use strict';
+
 var testHelper = require('../../test_helper');
 var should = testHelper.should;
 var waterlock = testHelper.waterlock_local;
@@ -12,9 +14,11 @@ describe('email reset action', function(){
 
   it('should respond with 404', function(done){
     var req = {method: 'PUT'};
-    var res = {json: function(code){
-      code.should.equal(404);
-      done();
+    var res = {
+      status: function(){ return this; },
+      json: function(code){
+        code.should.equal(404);
+        done();
     }};
     reset(req, res);
   });

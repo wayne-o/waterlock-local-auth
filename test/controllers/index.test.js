@@ -1,3 +1,5 @@
+'use strict';
+
 var test_helper = require('../test_helper');
 var should = test_helper.should;
 var wl = test_helper.waterlock_local;
