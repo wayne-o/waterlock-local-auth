@@ -17,6 +17,23 @@ set the following option in your `waterlock.js` config file
 authMethod:[
 	{
 		name: "waterlock-local-auth",
+		emailVerification:{
+			tokens: boolean, // object containing information regarding password resets
+			
+			// object containing information about your smtp server, see nodemailer
+			mail: {
+				options: string, // how it is use te transport method, see nodemailer
+				from: string, // the from address
+				subject: string, // the email subject for password reset emails
+				forwardUrl: string // the url to send the user to after they have clicked the password reset link in their inbox (e.g. a form on your site which POST to `/auth/reset`)
+			},
+
+			// object containing template information for the reset emails
+			template:{
+				file: string, // the relative path to the `jade` template for the reset emails
+				vars: object, // object containing any vars you want passed to the template for rendering
+			}
+		},
 		passwordReset: {
 			tokens: boolean, // object containing information regarding password resets
 

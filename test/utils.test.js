@@ -14,20 +14,20 @@ describe('utils',function(){
       }
     });
 
-  describe('getHtmlEmail', function(){
+  describe('getHtmlEmailForPasswordReset', function(){
     it('should exist', function(done){
-      utils.should.have.property('getHtmlEmail');
+      utils.should.have.property('getHtmlEmailForPasswordReset');
       done();
     });
 
     it('should return html', function(done){
-      utils.getHtmlEmail({owner: "test", resetToken: "token"}).should.be.String
+      utils.getHtmlEmailForPasswordReset({owner: "test", resetToken: "token"}).should.be.String
       done()
     });
 
     it('should error', function(done) {
       utils = proxyquire('../lib/utils', {'./waterlock-local-auth': {}});
-      (function(){ utils.getHtmlEmail({owner: "test", resetToken: "token"})}).should.throwError('No config file defined, try running [waterlock install config]')
+      (function(){ utils.getHtmlEmailForPasswordReset({owner: "test", resetToken: "token"})}).should.throwError('No config file defined, try running [waterlock install config]')
       done()
     });
   });
