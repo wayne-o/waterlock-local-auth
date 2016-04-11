@@ -17,7 +17,7 @@ set the following option in your `waterlock.js` config file
 authMethod:[
 	{
 		name: "waterlock-local-auth",
-		emailVerification:{
+		emailverification:{
 			tokens: boolean, // object containing information regarding password resets
 			
 			// object containing information about your smtp server, see nodemailer
